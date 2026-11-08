@@ -971,12 +971,11 @@
     }
   }
 
-  /* otomatik ağız: sadece iyi kelime ağza yaklaşırken açılır */
+  /* otomatik ağız: ağza yaklaşan her kelimeye açılır (kırmızı dahil) */
   function autoWantsMouth() {
     const mouthTop = CHAR_TOP + 46;
     for (let i = 0; i < state.words.length; i++) {
       const wd = state.words[i];
-      if (wd.bad) continue;
       const wcx = wd.x + wd.w / 2;
       if (Math.abs(wcx - state.playerX) >= (32 + wd.w / 2) - 8) continue;
       const bottom = wd.y + wd.h;
